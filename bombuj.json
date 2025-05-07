@@ -4,5 +4,5 @@
   "version": "1.0.0",
   "description": "stream czech and slovak content from bombuj.si",
   "url": "https://www.bombuj.si",
-  "mainScript": "https://raw.githubusercontent.com/dolniaciiik/bombujsi/refs/heads/main/bombuj.js"
+  "mainScript": "https://raw.githubusercontent.com/dolniaciiik/bombujsi/main/bombuj.js"
 }
