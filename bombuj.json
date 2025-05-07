@@ -1,6 +1,6 @@
 {
   "sourceName": "bombuj si",
-  "author": {"name" : "anon"}
+  "author": {"name" : "anon"},
   "version": "1.0.0",
   "description": "stream czech and slovak content from bombuj.si",
   "url": "https://www.bombuj.si",
