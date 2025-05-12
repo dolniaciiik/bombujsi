@@ -9,8 +9,8 @@
     "language": "Czech",
     "streamType": "HLS",
     "quality": "720p",
-    "searchBaseUrl" : "https://www.bombuj.si/online-movie-%s"
-    "scriptUrl": "https://raw.githubusercontent.com/dolniaciiik/bombujsi/refs/heads/main/bombuj.js",
+    "searchBaseUrl" : "https://www.bombuj.si/online-movie-%s",
+    "scriptUrl" : "https://raw.githubusercontent.com/dolniaciiik/bombujsi/refs/heads/main/bombuj.js",
     "asyncJS": true,
     "type" : "movies"
 }
