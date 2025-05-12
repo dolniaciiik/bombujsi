@@ -1,26 +1,34 @@
-async function search(query) {
-    const name = query.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, '-');
-    const url = `https://www.bombuj.si/online-movie-${name}`;
-  
+import cheerio from 'cheerio';
+
+export async function search(query) {
+  const name = query.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, '-');
+  const url = `https://www.bombuj.si/online-movie-${name}`;
+
+  try {
     const res = await fetch(url, { method: 'HEAD' });
     if (!res.ok) return [];
-  
+
     return [{
       title: query,
       url: url,
-      thumbnail: null // You could update this later in details()
+      thumbnail: null
     }];
+  } catch (e) {
+    console.error('Search error:', e);
+    return [];
   }
-  
-  async function details(url) {
+}
+
+export async function details(url) {
+  try {
     const res = await fetch(url);
     const html = await res.text();
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-  
-    const title = doc.querySelector('h1')?.textContent.trim();
-    const description = doc.querySelector('meta[name="description"]')?.content || '';
-    const image = doc.querySelector('meta[property="og:image"]')?.content || '';
-  
+    const $ = cheerio.load(html);
+
+    const title = $('h1').first().text().trim();
+    const description = $('meta[name="description"]').attr('content') || '';
+    const image = $('meta[property="og:image"]').attr('content') || '';
+
     return {
       title,
       description,
@@ -32,18 +40,27 @@ async function search(query) {
         }
       ]
     };
+  } catch (e) {
+    console.error('Details error:', e);
+    return null;
   }
-  
-  async function stream(url) {
+}
+
+export async function stream(url) {
+  try {
     const res = await fetch(url);
     const html = await res.text();
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-  
-    const iframe = doc.querySelector('iframe');
-    if (!iframe) return [];
-  
+    const $ = cheerio.load(html);
+
+    const iframeSrc = $('iframe').attr('src');
+    if (!iframeSrc) return [];
+
     return [{
-      url: iframe.src,
+      url: iframeSrc,
       isPlayable: true
     }];
+  } catch (e) {
+    console.error('Stream error:', e);
+    return [];
   }
+}
