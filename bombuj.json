@@ -1,14 +1,15 @@
 {
-  "title": "bombuj si",
-  "author": {"name" : "anon"},
-  "version": "1.0.0",
-  "description": "stream czech and slovak content from bombuj.si",
-  "url": "https://www.bombuj.si",
-  "mainScript": "https://cdn.jsdelivr.net/gh/dolniaciiik/bombujsi@main/bombuj.js",
-  "scripts": {
-    "search": "search",
-    "details": "details",
-    "stream": "stream"
-  },
-  "asyncJS" : "true"
-}
+    "sourceName": "bombuj.si",
+    "iconUrl": "https://www.bombuj.si/images/favicon.png",
+    "author": {
+        "name": "dolnaiciiik",
+        "icon": "https://github.com/dolniaciiik/bombujsi/blob/37828b171ad4a3b0c8f40caf6124920834647874/nagatoro.jpg"
+    },
+    "version": "1.0.0",
+    "language": "Czech",
+    "streamType": "HLS",
+    "quality": "720p",
+    "scriptUrl": "https://raw.githubusercontent.com/dolniaciiik/bombujsi/refs/heads/main/bombuj.js",
+    "asyncJS": true
+ }
+ 
