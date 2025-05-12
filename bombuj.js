@@ -1,10 +1,11 @@
 async function searchResults(query) {
   console.log("Sora: searchResults called with query:", query);
 
+  // Example static return to confirm it works
   return [
     {
-      title: "Forrest Gump",
-      url: "https://www.bombuj.si/online-film-forrest-gump",
+      title: "Example: " + query,
+      url: "https://www.bombuj.si/online-movie-" + query,
       thumbnail: null
     }
   ];
