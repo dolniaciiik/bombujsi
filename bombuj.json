@@ -10,6 +10,6 @@
     "streamType": "HLS",
     "quality": "720p",
     "scriptUrl": "https://raw.githubusercontent.com/dolniaciiik/bombujsi/refs/heads/main/bombuj.js",
-    "asyncJS": true
- }
- 
+    "asyncJS": true,
+    "type" : "movies"
+}
