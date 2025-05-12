@@ -1,21 +1,13 @@
 async function search(query) {
-    const name = query.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, '-');
-    const url = `https://www.bombuj.si/online-movie-${name}`;
-  
-    try {
-      const res = await fetch(url, { method: 'GET' });
-      if (!res.ok) return [];
-  
-      return [{
-        title: query,
-        url: url,
-        thumbnail: null
-      }];
-    } catch (e) {
-      console.error('Search error:', e);
-      return [];
-    }
-  }
+  console.log("Running search with query:", query);
+
+  // Example fallback result to confirm search works
+  return [{
+    title: "Test Movie: " + query,
+    url: "https://www.bombuj.si/online-movie-test",
+    thumbnail: null
+  }];
+}
   
   async function details(url) {
     try {
