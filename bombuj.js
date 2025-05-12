@@ -1,4 +1,4 @@
-async function search(query) {
+async function searchResults(query) {
   console.log("Sora: search called with query:", query);
 
   return [{
