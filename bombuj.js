@@ -1,11 +1,13 @@
 async function searchResults(query) {
-  console.log("Sora: search called with query:", query);
+  console.log("Sora: searchResults called with query:", query);
 
-  return [{
-    title: "Test: " + query,
-    url: "https://www.bombuj.si/online-movie-test",
-    thumbnail: null
-  }];
+  return [
+    {
+      title: query,
+      url: "https://www.bombuj.si/online-film-"+query,
+      thumbnail: null
+    }
+  ];
 }
 
 async function details(url) {
