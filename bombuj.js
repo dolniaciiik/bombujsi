@@ -3,8 +3,8 @@ async function searchResults(query) {
 
   return [
     {
-      title: query,
-      url: "https://www.bombuj.si/online-film-"+query,
+      title: "Forrest Gump",
+      url: "https://www.bombuj.si/online-film-forrest-gump",
       thumbnail: null
     }
   ];
