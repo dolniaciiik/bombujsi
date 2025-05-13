@@ -5,7 +5,7 @@ async function searchResults(query) {
   return [
     {
       title: "Example: " + query,
-      url: "https://www.bombuj.si/online-movie-" + query,
+      url: "https://www.bombuj.si/online-film-" + query,
       thumbnail: null
     }
   ];
